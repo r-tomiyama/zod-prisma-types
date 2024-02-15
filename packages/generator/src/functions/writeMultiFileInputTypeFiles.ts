@@ -17,7 +17,9 @@ import { CreateFiles } from '../types';
 /////////////////////////////////////////////////
 
 export const writeInputTypeFiles: CreateFiles = ({ path, dmmf }) => {
-  const { inputTypePath, writeBarrelFiles } = dmmf.generatorConfig;
+  const { inputTypePath, writeBarrelFiles, createInputTypes } = dmmf.generatorConfig;
+
+  if (!createInputTypes) return;
 
   // WRITE INDEX FILE
   // ------------------------------------------------------------
